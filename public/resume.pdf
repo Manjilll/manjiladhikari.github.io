@@ -1,0 +1,8 @@
+<a
+  href="/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="rounded-full border border-neutral-700 px-6 py-3 text-sm font-medium transition hover:border-neutral-400"
+>
+  View Resume ↗
+</a>

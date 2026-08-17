@@ -5,36 +5,56 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Navigation */}
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <div className="text-lg font-semibold tracking-wide">
-          MANJIL<span className="text-neutral-500">.</span>
-        </div>
+      <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/[0.06] bg-[#0a0a0a]/80 backdrop-blur-xl">
+  <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+    <a
+      href="/"
+      className="text-lg font-semibold tracking-tight"
+    >
+      MANJIL<span className="text-neutral-500">.</span>
+    </a>
 
-        <div className="hidden gap-8 text-sm text-neutral-400 md:flex">
-          <a href="#work" className="transition hover:text-white">
-            Work
-          </a>
-          <a href="#about" className="transition hover:text-white">
-            About
-          </a>
-          <a href="#experience" className="transition hover:text-white">
-            Experience
-          </a>
-          <a href="#contact" className="transition hover:text-white">
-            Contact
-          </a>
-        </div>
+    <div className="hidden items-center gap-8 text-sm text-neutral-500 md:flex">
+      <a
+        href="#work"
+        className="transition hover:text-white"
+      >
+        Work
+      </a>
 
-        <a
-          href="#contact"
-          className="rounded-full border border-neutral-700 px-4 py-2 text-sm transition hover:border-neutral-400"
-        >
-          Let's Talk
-        </a>
-      </nav>
+      <a
+        href="#about"
+        className="transition hover:text-white"
+      >
+        About
+      </a>
+
+      <a
+        href="#experience"
+        className="transition hover:text-white"
+      >
+        Experience
+      </a>
+
+      <a
+        href="#contact"
+        className="transition hover:text-white"
+      >
+        Contact
+      </a>
+    </div>
+
+    <a
+      href="#contact"
+      className="rounded-full border border-neutral-700 px-4 py-2 text-xs font-medium transition hover:border-neutral-400 hover:bg-white hover:text-black"
+    >
+      Let's talk
+    </a>
+  </div>
+</nav>
 
       {/* Hero */}
-      <section className="relative mx-auto flex min-h-[calc(100vh-90px)] max-w-6xl items-center px-6 py-20">
+      <section className="relative mx-auto flex min-h-[calc(100vh-90px)] max-w-6xl items-center px-6 pb-20 pt-32">
         {/* Background glow */}
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.03] blur-3xl" />
 
@@ -91,34 +111,38 @@ export default function Home() {
       </div>
     </div>
   </div>
+  <a
+  href="/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="rounded-full border border-neutral-700 px-6 py-3 text-sm font-medium transition hover:border-neutral-400"
+>
+  View Resume ↗
+</a>
 
   {/* Photo */}
   <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">
-
-    <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-neutral-800 bg-neutral-900">
-
-      <Image
-        src="/manjil.jpg"
-        alt="Manjil Adhikari"
-        fill
-        priority
-        className="object-cover object-top grayscale transition duration-700 hover:grayscale-0"
-        sizes="(max-width: 1024px) 80vw, 400px"
-      />
-
-    </div>
-
-    <div className="absolute -bottom-5 -left-5 rounded-2xl border border-neutral-800 bg-[#0a0a0a] px-5 py-4">
-      <p className="text-xs uppercase tracking-[0.2em] text-neutral-600">
-        Currently
-      </p>
-
-      <p className="mt-1 text-sm text-neutral-300">
-        Building with data & AI
-      </p>
-    </div>
-
+  <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-neutral-800 bg-neutral-900">
+    <Image
+      src="/manjil.jpg"
+      alt="Manjil Adhikari"
+      fill
+      priority
+      className="object-cover object-top grayscale transition duration-700 hover:scale-[1.02] hover:grayscale-0"
+      sizes="(max-width: 1024px) 80vw, 400px"
+    />
   </div>
+
+  <div className="absolute -bottom-5 -left-5 rounded-2xl border border-neutral-800 bg-[#0a0a0a] px-5 py-4 shadow-2xl">
+    <p className="text-[10px] uppercase tracking-[0.25em] text-neutral-600">
+      Currently
+    </p>
+
+    <p className="mt-1 text-sm text-neutral-300">
+      Building with data & AI
+    </p>
+  </div>
+</div>
 
 </div>
 
@@ -156,46 +180,104 @@ export default function Home() {
 />
         </div>
       </section>
-      {/* About */}
+{/* About */}
 <section
   id="about"
   className="mx-auto max-w-6xl border-t border-neutral-900 px-6 py-32"
 >
-  <div className="grid gap-16 md:grid-cols-[0.8fr_1.2fr]">
-    
+  <div className="grid gap-16 lg:grid-cols-[0.8fr_1.2fr]">
+
+    {/* Section heading */}
     <div>
       <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
         About Me
       </p>
-    </div>
 
-    <div>
-      <h2 className="text-3xl font-medium leading-tight tracking-tight sm:text-5xl">
-        I sit at the intersection of
+      <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
+        Business meets
+        <br />
         <span className="text-neutral-500">
-          {" "}business, data, and technology.
+          technology.
         </span>
       </h2>
+    </div>
 
-      <div className="mt-8 space-y-6 text-base leading-8 text-neutral-400">
-        <p>
-          My background combines business, banking, analytics, and technology.
-          I enjoy taking a real-world business problem, understanding the data
-          behind it, and turning that information into something useful.
+    {/* Content */}
+    <div>
+      <div className="max-w-3xl">
+
+        {/* Story */}
+        <div>
+          <p className="text-xl leading-9 text-neutral-200">
+            I'm interested in the space where
+            <span className="text-neutral-500">
+              {" "}business problems, data, and technology
+            </span>{" "}
+            come together.
+          </p>
+
+          <div className="mt-8 space-y-6 leading-8 text-neutral-400">
+            <p>
+              My journey started in banking, where I gained experience
+              working with customers, financial products, credit-related
+              processes, and business decisions.
+            </p>
+
+            <p>
+              That experience eventually led me deeper into analytics. I
+              became interested in how data can be used not just to report
+              what happened, but to understand why it happened and what
+              could happen next.
+            </p>
+
+            <p>
+              Today, I'm focused on business analytics, data, artificial
+              intelligence, and building practical analytical solutions.
+              I enjoy working across the entire process — from understanding
+              a business problem to exploring data, building models, and
+              communicating the result.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {/* Personal interests */}
+  <div className="mt-24 border-t border-neutral-900 pt-12">
+    <div className="grid gap-8 md:grid-cols-3">
+
+      <div>
+        <p className="text-xs uppercase tracking-[0.2em] text-neutral-600">
+          Interested in
         </p>
 
-        <p>
-          I've worked with financial and customer-facing processes in banking
-          and later gained hands-on experience with data integration and
-          analytics technologies.
-        </p>
-
-        <p>
-          Today, my interests are centered around data analytics, business
-          intelligence, artificial intelligence, and building practical
-          analytical products.
+        <p className="mt-3 text-lg text-neutral-300">
+          Data Analytics
         </p>
       </div>
+
+      <div>
+        <p className="text-xs uppercase tracking-[0.2em] text-neutral-600">
+          Exploring
+        </p>
+
+        <p className="mt-3 text-lg text-neutral-300">
+          AI & Intelligent Systems
+        </p>
+      </div>
+
+      <div>
+        <p className="text-xs uppercase tracking-[0.2em] text-neutral-600">
+          Outside work
+        </p>
+
+        <p className="mt-3 text-lg text-neutral-300">
+          Music · Guitar · Sports
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -203,100 +285,118 @@ export default function Home() {
 {/* Experience */}
 <section
   id="experience"
-  className="mx-auto max-w-6xl border-t border-neutral-900 px-6 py-32"
+  className="border-t border-neutral-900"
 >
-  <div className="mb-16">
-    <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">
-      Experience
-    </p>
+  <div className="mx-auto max-w-6xl px-6 py-32">
 
-    <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-      Where I've been.
-    </h2>
-  </div>
-
-  <div className="space-y-0">
-
-    {/* Experience 01 */}
-    <div className="grid gap-6 border-t border-neutral-800 py-10 md:grid-cols-[180px_1fr_160px]">
-      <p className="text-sm text-neutral-600">
-        Experience 01
+    <div className="mb-20">
+      <p className="mb-5 text-sm uppercase tracking-[0.3em] text-neutral-500">
+        Experience
       </p>
 
-      <div>
-        <h3 className="text-2xl font-medium">
-          Global IME Bank
-        </h3>
-
-        <p className="mt-1 text-neutral-500">
-          Banking · Business & Credit Analysis
-        </p>
-
-        <p className="mt-5 max-w-2xl leading-7 text-neutral-400">
-          Experience working with customers, financial products, credit-related
-          processes, business development, and analytical decision-making in a
-          commercial banking environment.
-        </p>
-      </div>
-
-      <p className="text-sm text-neutral-600 md:text-right">
-        Nepal
-      </p>
+      <h2 className="text-4xl font-semibold tracking-tight sm:text-6xl">
+        A path from
+        <span className="text-neutral-500">
+          {" "}banking to data.
+        </span>
+      </h2>
     </div>
 
-    {/* Experience 02 */}
-    <div className="grid gap-6 border-t border-neutral-800 py-10 md:grid-cols-[180px_1fr_160px]">
-      <p className="text-sm text-neutral-600">
-        Experience 02
-      </p>
+    <div className="space-y-0">
 
-      <div>
-        <h3 className="text-2xl font-medium">
-          Striim
-        </h3>
+      {/* Global IME */}
+      <div className="grid gap-8 border-t border-neutral-800 py-12 md:grid-cols-[160px_1fr_120px]">
 
-        <p className="mt-1 text-neutral-500">
-          Field Engineering Intern
-        </p>
+        <div>
+          <p className="text-sm text-neutral-600">
+            01
+          </p>
+        </div>
 
-        <p className="mt-5 max-w-2xl leading-7 text-neutral-400">
-          Worked with real-time data integration technologies and supported
-          customer use cases involving data pipelines, troubleshooting, and
-          cloud data platforms.
-        </p>
+        <div>
+          <h3 className="text-2xl font-medium">
+            Global IME Bank
+          </h3>
+
+          <p className="mt-2 text-neutral-500">
+            Banking · Business & Credit Analysis
+          </p>
+
+          <p className="mt-6 max-w-2xl leading-8 text-neutral-400">
+            Worked across customer service, financial products, credit-related
+            processes, business development, and analytical decision-making
+            within a commercial banking environment.
+          </p>
+        </div>
+
+        <div className="text-sm text-neutral-600 md:text-right">
+          Nepal
+        </div>
+
       </div>
 
-      <p className="text-sm text-neutral-600 md:text-right">
-        United States
-      </p>
-    </div>
-    
-    {/* Education */}
-    <div className="grid gap-6 border-t border-neutral-800 py-10 md:grid-cols-[180px_1fr_160px]">
-      <p className="text-sm text-neutral-600">
-        Education
-      </p>
+      {/* Striim */}
+      <div className="grid gap-8 border-t border-neutral-800 py-12 md:grid-cols-[160px_1fr_120px]">
 
-      <div>
-        <h3 className="text-2xl font-medium">
-          University of New Haven
-        </h3>
+        <div>
+          <p className="text-sm text-neutral-600">
+            02
+          </p>
+        </div>
 
-        <p className="mt-1 text-neutral-500">
-          MS Business Analytics
-        </p>
+        <div>
+          <h3 className="text-2xl font-medium">
+            Striim
+          </h3>
 
-        <p className="mt-5 max-w-2xl leading-7 text-neutral-400">
-          Graduate studies focused on data analytics, databases, visualization,
-          forecasting, data mining, and business intelligence.
-        </p>
+          <p className="mt-2 text-neutral-500">
+            Field Engineering Intern
+          </p>
+
+          <p className="mt-6 max-w-2xl leading-8 text-neutral-400">
+            Supported real-time data integration use cases involving data
+            pipelines, troubleshooting, SQL/TQL queries, and cloud data
+            platforms including Oracle, Kafka, and BigQuery.
+          </p>
+        </div>
+
+        <div className="text-sm text-neutral-600 md:text-right">
+          United States
+        </div>
+
       </div>
 
-      <p className="text-sm text-neutral-600 md:text-right">
-        Connecticut
-      </p>
-    </div>
+      {/* Education */}
+      <div className="grid gap-8 border-t border-neutral-800 py-12 md:grid-cols-[160px_1fr_120px]">
 
+        <div>
+          <p className="text-sm text-neutral-600">
+            03
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-2xl font-medium">
+            University of New Haven
+          </h3>
+
+          <p className="mt-2 text-neutral-500">
+            MS Business Analytics
+          </p>
+
+          <p className="mt-6 max-w-2xl leading-8 text-neutral-400">
+            Graduate studies focused on business analytics, data visualization,
+            databases, forecasting, data mining, and business intelligence.
+          </p>
+        </div>
+
+        <div className="text-sm text-neutral-600 md:text-right">
+          USA
+        </div>
+
+      </div>
+
+    </div>
   </div>
 </section>
 {/* Contact */}
